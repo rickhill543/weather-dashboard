@@ -21,6 +21,26 @@ var searchHistory = [];
 var searchLat;
 var searchLon;
 
+// initial function that grabs any saved searches from localStorage
+function loadHistory() {
+  var lastSearched = localStorage.getItem('lastSearched');
+  var searchHistory = localStorage.getItem('SearchHistory');
+  if (searchHistory) {
+    historyContainer.innerHTML = searchHistory;
+  }
+  if (!searchHistory) {
+    cityInput.value = "Orlando";
+    $("#history-container").append('<li>' + cityInput.value + '</li>');
+    weatherSearchCurrent();
+    return;
+  }
+  if (lastSearched) {
+    cityInput.value = lastSearched;
+    weatherSearchCurrent();
+  }
+}
+loadHistory();
+
 // function that calls for the current day's forecast and grabs various data from the api
 function weatherSearchCurrent() {
     fetch(
@@ -137,6 +157,8 @@ function weatherSearchCurrent() {
       // next few statements collect and store relevant information for later use
       lastSearched = cityInput.value;
       searchHistory.push([lastSearched]);
+      localStorage.setItem('lastSearched', lastSearched);
+      localStorage.setItem('SearchHistory', historyContainer.innerHTML);
       weatherSearchCurrent();
   });
 
@@ -147,5 +169,6 @@ function weatherSearchCurrent() {
     var archivedSearch = event.target.textContent;
     cityInput.value = archivedSearch;
     lastSearched = archivedSearch;
+    localStorage.setItem('lastSearched', lastSearched);
     weatherSearchCurrent();
   });
