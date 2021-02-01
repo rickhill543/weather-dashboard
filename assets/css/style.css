@@ -12,7 +12,10 @@
     color: black;
 }
 
-/* beginning of header styles */
+/* beginning of header & main styles */
+main {
+    height: 1000px;
+}
 .title {
     height: 80px;
     background: #343A40;
@@ -95,7 +98,7 @@
 #current-container .searched-uv {
     padding: 10px;
     margin-left: 5px;
-    border-radius: 15px;
+    border-radius: 3px;
 }
 
 /* beginning of future weather styles */

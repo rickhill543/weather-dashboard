@@ -49,6 +49,9 @@ function weatherSearchCurrent() {
       '&units=imperial&appid=1786fea6053f5882af7a8308255b7294'
     )
       .then(function(response) {
+        if (!response.ok) {
+          alert("This 'city' could not be found, try again.");
+        }
         return response.json();
       })
       .then(function(response) {
@@ -120,7 +123,6 @@ function weatherSearchCurrent() {
           var day = date.getDate()
           var year = date.getFullYear();
           var displayDate = month + '/' + day + '/' + year;
-          console.log("date: " + date);
           loopDay.textContent = displayDate;
           // uses a loop to dynamically generate a 5 card panel with relevant api information
           var loopIcon = document.querySelector('#future-icon-' + i);
@@ -146,10 +148,8 @@ function weatherSearchCurrent() {
     if (cityInput.value.length < 1 || cityInput.value.length > 20) {
       return;
     }
-    console.log("right before for loop checking cityInpyt: " + cityInput.value);
       for (i=0; i<searchHistory.length; i++) {
         if (cityInput.value == searchHistory[i].value) {
-          console.log("said true before return");
           return;
         }
     }
