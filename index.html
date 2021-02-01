@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous"/>
+    <title>Document</title>
+</head>
+<body>
+    <header class="title">
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main class="row">
+        <section class="left-section col-xl-3">
+            <div class="left-container">
+                <h2>Search for a City:</h2>
+                <form id="weather-form">
+                    <input type="text" id="city-input" placeholder="Orlando">
+                    <button type="submit" id="weather-button"><i class="fas fa-search"></i></button>
+                </form>
+                <ul id="history-container"></ul>
+            </div>
+        </section>
+        <section class="right-section col-xl-9">
+            <div id="current-container">
+                <div id="current-title">
+                    <h2 id="searched-city"></h2>
+                    <img id="searched-icon" src="" alt="Weather icon">
+                </div>
+                <div id="searched-temp"></div>
+                <div id="searched-humidity"></div>
+                <div id="searched-wind"></div>
+                <div class="uv-container">
+                    <div id="searched-uv-text"></div>
+                    <div id="searched-uv" class="searched-uv"></div>
+                </div>
+            </div>
+            <div id="future-container">
+                <h2>5 Day Forecast</h2>
+                <div class="row">
+                    <div class="col-xl-2 forecast-card">
+                        <h3 id="future-date-0"></h3>
+                        <img id="future-icon-0" src="" alt="Weather icon">
+                        <div id="future-temp-0"></div>
+                        <div id="future-humidity-0"></div>
+                    </div>
+                    <div class="col-xl-2 forecast-card">
+                        <h3 id="future-date-1"></h3>
+                        <img id="future-icon-1" src="" alt="Weather icon">
+                        <div id="future-temp-1"></div>
+                        <div id="future-humidity-1"></div>
+                    </div>
+                    <div class="col-xl-2 forecast-card">
+                        <h3 id="future-date-2"></h3>
+                        <img id="future-icon-2" src="" alt="Weather icon">
+                        <div id="future-temp-2"></div>
+                        <div id="future-humidity-2"></div>
+                    </div>
+                    <div class="col-xl-2 forecast-card">
+                        <h3 id="future-date-3"></h3>
+                        <img id="future-icon-3" src="" alt="Weather icon">
+                        <div id="future-temp-3"></div>
+                        <div id="future-humidity-3"></div>
+                    </div>
+                    <div class="col-xl-2 forecast-card">
+                        <h3 id="future-date-4"></h3>
+                        <img id="future-icon-4" src="" alt="Weather icon">
+                        <div id="future-temp-4"></div>
+                        <div id="future-humidity-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
