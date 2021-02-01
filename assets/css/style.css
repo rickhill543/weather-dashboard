@@ -57,7 +57,7 @@
 #history-container {
     padding: 0;
     border: 1px solid #CCC;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 #history-container li {
     display: flex;
@@ -66,8 +66,9 @@
     color: black;
     border-bottom: 1px solid #CCC;
     cursor: pointer;
-    background-color: transparent;
+    background-color: white;
     transition: background-color .1s;
+    border-radius: 7px;
 }
 #history-container li:hover {
     background-color: rgb(122, 122, 255);
